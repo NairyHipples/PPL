@@ -6,9 +6,20 @@
     <link rel="stylesheet" href="css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="css/main.css" media="screen">
     <!-- The HTML5 validator is going to whine about the | sign in the google fonts link -->
-    <title>PPL - Pris Per Liter</title>
+    <title>PPL</title>
   </head>
   <body>
+    <form action="#" >
+      <p>
+        <input type="text" id="search" autocomplete="off" class="form-control">
+      </p>
+      <p>
+        <input type="submit" value="Search" class="form-control btn btn-lg btn-primary w100">
+      </p>
+      <div id="results">
+
+      </div>
+    </form>
     <ul class="">
       <li><button type="button" class="">Billigast Först</button></li>
       <li><button type="button" class="">Dyrast Först</button></li>
@@ -17,12 +28,12 @@
 
 
 
-    <!-- Adding jQuery if I need it down the line -->
-    <script src="js/jquery.xml2json.js" type="text/javascript" language="javascript"></script>
+    <!-- Adding jQuery -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
     <!-- Bootstrap integration -->
     <script src="js/bootstrap.js" charset="utf-8"></script>
     <!-- My main.js file -->
     <script src="js/main.js" charset="utf-8"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
   </body>
 </html>
