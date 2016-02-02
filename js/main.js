@@ -36,7 +36,7 @@
       /* The maxResults parameter specifies the maximum number of items
        that should be returned in the result set. Acceptable values are
         0 to 50, inclusive. The default value is 5. */
-      maxResults: 1,
+      maxResults: 3,
 
       /* The order parameter specifies the method that will be used to
       order resources in the API response. The default value is relevance.
