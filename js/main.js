@@ -1,6 +1,35 @@
-$(document).ready(function(){
-
 var vidResults = 1;
+
+$(document).ready(function(){
+  $('form').on('submit', function(e){
+    e.preventDefault();
+    $.get(
+      "https://www.googleapis.com/youtube/v3/search",{
+        part: 'snippet',
+        type: "video",
+        q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+        maxResults: vidResults,
+        order: "viewCount",
+        publishedAfter: "2016-01-01T00:00:00Z",
+        kay: "AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA"},
+        function(data){
+          var output;
+          $("#results").html("");
+          $.each(data.items, function(i, item){
+            console.log(item);
+            videoTitle = item.snippet.title;
+            videoId = item.id.videoId;
+
+            output = '<div class="item"><h2>'+videoTitle+'</h2><iframe class="video" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></div>';
+            //Append to results div
+            $("#results").append(output);
+          });
+        }
+      );
+    });
+});
+
+
 // $.get(
 //   "",{
 //     part:'',
@@ -12,38 +41,13 @@ var vidResults = 1;
 //     }
 //   );
 
-$('form').on('submit', function(e){
-  e.preventDefault();
-  $.get(
-    "https://www.googleapis.com/youtube/v3/search",{
-      part: 'snippet',
-      type: "video",
-      q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-      maxResults: vidResults,
-      order: "viewCount",
-      publishedAfter: "2016-01-01T00:00:00Z"},
-      function(data){
-        var output;
-         $("#results").html("");
-        $.each(data.items, function(i, item){
-          console.log(item);
-          videoTitle = item.snippet.title;
-          videoId = item.id.videoId;
 
-          output = '<div class="item"><h2>'+videoTitle+'</h2><iframe class="video" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></div>';
-          //Append to results div
-          $("#results").append(output);
-        });
-      }
-    );
-});
-
-function init() {
-  gapi.client.setApiKey("AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA");
-  gapi.client.load("youtube", "v3", function() {
-    //youtube api is ready
-  })
-}
+// function init() {
+//   gapi.client.setApiKey("AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA");
+//   gapi.client.load("youtube", "v3", function() {
+//     //youtube api is ready
+//   })
+// }
 // $('form').on('submit', function(e) {
 //   e.preventDefault();
 //   //prepare the request
@@ -89,4 +93,3 @@ function init() {
 //     })
 //   });
 // })
-});
