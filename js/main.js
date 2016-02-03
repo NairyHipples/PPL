@@ -29,7 +29,7 @@ $('form').on('submit', function(e){
           videoTitle = item.snippet.title;
           videoId = item.id.videoId;
 
-          output = '<div class="item"><h2>'+videoTitle+'</h2><li><iframe class="video" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></li></div>';
+          output = '<div class="item"><h2>'+videoTitle+'</h2><iframe class="video" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></div>';
           //Append to results div
           $("#results").append(output);
         });
