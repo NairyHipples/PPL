@@ -26,7 +26,7 @@ $('form').on('submit', function(e){
         $.each(data.items, function(i, item){
           console.log(item);
           videoTitle = item.snippet.title;
-          videoId = item.snippet.resourceId.videoId;
+          videoId = item.id.videoId;
 
           output = '<div class="item"><h2>'+videoTitle+'</h2><li><iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></li></div>';
           //Append to results div
