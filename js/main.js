@@ -37,12 +37,12 @@ $('form').on('submit', function(e){
     );
 });
 
-// function init() {
-//   gapi.client.setApiKey("AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA");
-//   gapi.client.load("youtube", "v3", function() {
-//     //youtube api is ready
-//   })
-// }
+function init() {
+  gapi.client.setApiKey("AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA");
+  gapi.client.load("youtube", "v3", function() {
+    //youtube api is ready
+  })
+}
 // $('form').on('submit', function(e) {
 //   e.preventDefault();
 //   //prepare the request
