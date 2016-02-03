@@ -1,19 +1,25 @@
 /******************
       GENERAL
 ******************/
-/*body {
-  padding-top: 100px;
+body {
+  background:#f4f4f4;
+  font-family: "Arial", sans-serif;
+  font-size: 2em;
+  color: #666;
 }
 nav ul {
 }
 
 li {
 
-}*/
+}/**/
 
 /******************
       CLASSES
 ******************/
+.w100 {
+  width: 100%;
+}
 /*.btn {
   width: 100%;
   font-size: 3em;
