@@ -17,7 +17,6 @@ $('form').on('submit', function(e){
       part: 'snippet',
       maxResults: vidResults,
       q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-      maxResults: vidResults,
       order: "viewCount",
       publishedAfter: "2016-01-01T00:00:00Z"},
       function(data){
