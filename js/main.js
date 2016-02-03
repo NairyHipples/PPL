@@ -23,12 +23,13 @@ $('form').on('submit', function(e){
       key: 'AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA'},
       function(data){
         var output;
+         $("#results").html("");
         $.each(data.items, function(i, item){
           console.log(item);
           videoTitle = item.snippet.title;
           videoId = item.id.videoId;
 
-          output = '<div class="item"><h2>'+videoTitle+'</h2><li><iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></li></div>';
+          output = '<div class="item"><h2>'+videoTitle+'</h2><li><iframe class="video" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></li></div>';
           //Append to results div
           $("#results").append(output);
         });
@@ -36,6 +37,12 @@ $('form').on('submit', function(e){
     );
 });
 
+// function init() {
+//   gapi.client.setApiKey("AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA");
+//   gapi.client.load("youtube", "v3", function() {
+//     //youtube api is ready
+//   })
+// }
 // $('form').on('submit', function(e) {
 //   e.preventDefault();
 //   //prepare the request
@@ -81,11 +88,3 @@ $('form').on('submit', function(e){
 //     })
 //   });
 // })
-
-
-// function init() {
-//   gapi.client.setApiKey("AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA");
-//   gapi.client.load("youtube", "v3", function() {
-//     //youtube api is ready
-//   })
-// }
