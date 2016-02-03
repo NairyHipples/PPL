@@ -15,8 +15,9 @@ $('form').on('submit', function(e){
   $.get(
     "https://www.googleapis.com/youtube/v3/search",{
       part: 'snippet',
-      maxResults: vidResults,
+      type: "video",
       q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+      maxResults: vidResults,
       order: "viewCount",
       publishedAfter: "2016-01-01T00:00:00Z"},
       function(data){
