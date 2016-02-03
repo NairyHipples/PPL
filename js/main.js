@@ -16,11 +16,11 @@ $('form').on('submit', function(e){
     "https://www.googleapis.com/youtube/v3/search",{
       part: 'snippet',
       maxResults: vidResults,
-      key: 'AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA'},
       q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-      maxResults: 1,
+      maxResults: vidResults,
       order: "viewCount",
-      publishedAfter: "2016-01-01T00:00:00Z"
+      publishedAfter: "2016-01-01T00:00:00Z",
+      key: 'AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA'},
       function(data){
         var output;
         $.each(data.items, function(i, item){
@@ -31,10 +31,10 @@ $('form').on('submit', function(e){
           output = '<div class="item"><h2>'+videoTitle+'</h2><li><iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/'+videoId+' frameborder="0" allowfullscreen></iframe></li></div>';
           //Append to results div
           $("#results").append(output);
-        })
+        });
       }
-  );
-}
+    );
+});
 
 // $('form').on('submit', function(e) {
 //   e.preventDefault();
