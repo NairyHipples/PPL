@@ -11,7 +11,7 @@ $(document).ready(function(){
         maxResults: vidResults,
         order: "viewCount",
         publishedAfter: "2016-01-01T00:00:00Z",
-        kay: "AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA"},
+        key: "AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA"},
         function(data){
           var output;
           $("#results").html("");
