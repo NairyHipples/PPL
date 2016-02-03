@@ -13,6 +13,7 @@ $(document).ready(function(){
 //   );
 
 $('form').on('submit', function(e){
+
   e.preventDefault();
   $.get(
     "https://www.googleapis.com/youtube/v3/search?",{
@@ -42,7 +43,7 @@ function init() {
   gapi.client.setApiKey("AIzaSyDdKeKCAfv7oXA-opJJeQcGVPT6kOQSrNA");
   gapi.client.load("youtube", "v3", function() {
     //youtube api is ready
-  })
+  });
 }
 // $('form').on('submit', function(e) {
 //   e.preventDefault();
